@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinema Bilet Sistemi</title>
+    <link rel="stylesheet" href="sinema.css">
+</head>
+
+<body>
+    <h1>Sinema Bilet Sistemi</h1>
+    <div class="seats-container">
+        <!-- Koltukları burada dinamik olarak oluşturacağız -->
+    </div>
+    <button onclick="goToPaymentScreen()">Ödeme Ekranı</button>
+
+    <!-- Ödeme ekranı formu -->
+    <div id="paymentScreen" class="payment-screen">
+        <h2>Ödeme Ekranı</h2>
+        <div class="ticket-details">
+            <p>Koltuk Numarası: <span id="selectedSeatNumber"></span></p>
+            <p>Bilet Fiyatı: <span id="ticketPrice"></span> TL</p>
+        </div>
+        <form id="paymentForm" onsubmit="completePayment(event)">
+            <div>
+                <label for="cardNumber">Kart Numarası:</label>
+                <input type="text" id="cardNumber" required>
+            </div>
+            <div>
+                <label for="cardHolder">Kart Sahibi:</label>
+                <input type="text" id="cardHolder" required>
+            </div>
+            <div>
+                <label for="expiryDate">Son Kullanma Tarihi:</label>
+                <input type="text" id="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <button type="submit">Ödeme Tamamla</button>
+        </form>
+    </div>
+
+    <script src="sinema.js"></script>
+</body>
+
+</html>
